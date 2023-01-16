@@ -6,7 +6,7 @@ services:
     volumes:
       - /var/lib/postgresql/data/
     env_file:
-      - ..env
+      - ../.env
   web:
     # image: hub.docker.com/r/aleksandrkulagin/yamdb_final
     image: aleksandrkulagin/yamdb_final:latest
@@ -23,7 +23,7 @@ services:
     depends_on:
       - db
     env_file:
-      - ..env
+      - ../.env
 
   # Новый контейнер
   nginx:
