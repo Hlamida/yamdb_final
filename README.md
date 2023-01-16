@@ -1,7 +1,5 @@
 # yamdb_final
 
-![master](https://github.com/hlamida/yamdb_final/workflows/yamdb_workflow.yml/badge.svg)
-
 ![master](https://github.com/hlamida/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 ### Предназначение проекта:
