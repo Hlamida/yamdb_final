@@ -21,7 +21,7 @@ git clone https://git@github.com:Hlamida/api_yamdb.git
 ```
 
 ```
-cd api_yamdb
+cd yamdb_final
 ```
 
 Cоздать и активировать виртуальное окружение:
