@@ -1,9 +1,8 @@
+from api.permissions import IsAdminUserOrReadOnly
 from rest_framework import filters
 from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin,
                                    ListModelMixin)
 from rest_framework.viewsets import GenericViewSet
-
-from api.permissions import IsAdminUserOrReadOnly
 
 
 class CategoryGenreMixin(CreateModelMixin, ListModelMixin, DestroyModelMixin,

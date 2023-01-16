@@ -1,3 +1,12 @@
+from api.filters import TitlesFilter
+from api.permissions import (IsAdminOnly, IsAdminUserOrReadOnly,
+                             IsOwnerAdminModeratorOrReadOnly)
+from api.serializers import (AdminSerializer, CategoriesSerializer,
+                             CommentsSerializer, GenresSerializer,
+                             GetTokenSerializer, NotAdminSerializer,
+                             ReadTitlesSerializer, ReviewsSerializer,
+                             SignupSerializer, WriteTitlesSerializer)
+from api.utils import CategoryGenreMixin
 from django.core.mail import EmailMessage
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
@@ -9,16 +18,6 @@ from rest_framework.permissions import (AllowAny, IsAuthenticated,
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
-
-from api.filters import TitlesFilter
-from api.utils import CategoryGenreMixin
-from api.permissions import (IsAdminOnly, IsAdminUserOrReadOnly,
-                             IsOwnerAdminModeratorOrReadOnly)
-from api.serializers import (CategoriesSerializer, CommentsSerializer,
-                             GenresSerializer, GetTokenSerializer,
-                             NotAdminSerializer, ReadTitlesSerializer,
-                             ReviewsSerializer, SignupSerializer,
-                             AdminSerializer, WriteTitlesSerializer)
 from reviews.models import Category, Genre, Review, Title, User
 
 

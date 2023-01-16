@@ -4,11 +4,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
-from reviews.constants import (
-    ADMIN, MODERATOR, ROLE_CHOICES,
-    USER, MINSCORE, MAXSCORE, STUFF, TEXT_LEN,
-)
+from reviews.constants import (ADMIN, MAXSCORE, MINSCORE, MODERATOR,
+                               ROLE_CHOICES, STUFF, TEXT_LEN, USER)
 from reviews.validators import validate_username, validate_year
 
 

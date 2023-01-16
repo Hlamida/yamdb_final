@@ -1,10 +1,10 @@
 import re
+
+from django.core.exceptions import ValidationError
 from rest_framework import serializers
 from rest_framework.validators import UniqueTogetherValidator
-from django.core.exceptions import ValidationError
-
-from reviews.validators import validate_year
 from reviews.models import Category, Comment, Genre, Review, Title, User
+from reviews.validators import validate_year
 
 
 class SignupSerializer(serializers.ModelSerializer):
