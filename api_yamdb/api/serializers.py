@@ -9,7 +9,6 @@ from reviews.validators import validate_year
 
 class SignupSerializer(serializers.ModelSerializer):
     """Сериализатор регистрации пользователя."""
-
     class Meta:
         model = User
         fields = ('username', 'email')
