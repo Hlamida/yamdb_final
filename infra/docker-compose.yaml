@@ -8,8 +8,8 @@ services:
     env_file:
       - /home/duncan/.env
   web:
-    # image: hub.docker.com/r/aleksandrkulagin/yamdb_final
-    image: aleksandrkulagin/yamdb_final:latest
+    image: hub.docker.com/r/aleksandrkulagin/yamdb_final
+    # image: aleksandrkulagin/yamdb_final:latest
     # build: .
     restart: always
     volumes:
