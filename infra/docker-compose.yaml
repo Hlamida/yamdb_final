@@ -8,7 +8,6 @@ services:
     env_file:
       - .env
   web:
-    #image: hub.docker.com/r/aleksandrkulagin/yamdb_final:latest
     image: aleksandrkulagin/yamdb_final:latest
     build: .
     restart: always
