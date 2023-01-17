@@ -25,31 +25,48 @@ git clone https://git@github.com:Hlamida/yamdb_final.git
 2. Сохранить переменные с необходимыми значениями.
 
 Для работы с Docker Hub:
-- DOCKER_USERNAME
-- DOCKER_PASSWORD
+- DOCKER_USERNAME;
+- DOCKER_PASSWORD.
 
 Для деплоя и авторизации на удалённом сервере:
-- HOST
-- USER
-- SSH_KEY
-- PASSPHRASE
+- HOST;
+- USER;
+- SSH_KEY;
+- PASSPHRASE.
 
-Для запуска контейнеров сервиса:
-- DB_ENGINE
-- DB_NAME
-- POSTGRES_USER
-- POSTGRES_PASSWORD
-- DB_HOST
-- DB_PORT
-- SECRET_KEY
+Для работы базы данных:
+- DB_ENGINE;
+- DB_NAME;
+- POSTGRES_USER;
+- POSTGRES_PASSWORD;
+- DB_HOST;
+- DB_PORT;
+- SECRET_KEY.
 
 Для отправки отчёта о запуске сервиса:
-- TELEGRAM_TO
-- TELEGRAM_TOKEN
+- TELEGRAM_TO;
+- TELEGRAM_TOKEN.
 
 3. Скорректировать значения соответствующих переменных в файле yamdb_final/infra/.env
 
-4. Сделать push на Github. 
+4. Подготовить удалённый сервер к работе:
+- войти на свой сервер;
+- остановить службу nginx:
+```
+sudo systemctl stop nginx 
+```
+- установить docker:
+```
+sudo apt install docker.io 
+```
+- установить docker-compose в соответствии с документацией:
+```
+https://docs.docker.com/compose/install/
+```
+- скопировать файлы docker-compose.yaml и nginx/default.conf из проекта на сервер в home/<ваш_username>/docker-compose.yaml и home/<ваш_username>/nginx/default.conf соответственно.
+
+
+5. Сделать push на Github. 
 
 Проект будет протестирован на соответствие flake8, а также собственным тестам, образ будет загружен на Docker Hub, после чего развёрнут на удалённом сервере. 
 По окончанию деплоя будет выслано сообщение в телеграм пользователя.
