@@ -60,7 +60,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             sudo docker-compose stop
-            sudo docker-compose rm web
+            sudo docker-compose rm web nginx
             mkdir /home/duncan/infra
             touch /home/duncan/infra/.env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> /home/duncan/infra/.env
