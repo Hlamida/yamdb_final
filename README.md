@@ -4,9 +4,9 @@
 
 ### Документация проекта:
 
-```
+
 http://158.160.7.39/redoc/
-```
+
 
 ### Предназначение проекта:
 
@@ -65,10 +65,9 @@ sudo systemctl stop nginx
 ```
 sudo apt install docker.io 
 ```
-- установить docker-compose в соответствии с документацией:
-```
+- установить docker-compose в соответствии с документацией
 https://docs.docker.com/compose/install/
-```
+
 - скопировать файлы docker-compose.yaml и nginx/default.conf из проекта на сервер в home/<ваш_username>/docker-compose.yaml и home/<ваш_username>/nginx/default.conf соответственно.
 
 
