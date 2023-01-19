@@ -26,9 +26,14 @@ jobs:
           pytest
 
   build_and_push_to_docker_hub:
-    name: Push Docker image to Docker build_and_push_to_docker_hub
+    name: Push Docker image to Docker
     runs-on: ubuntu-latest
     needs: tests
+    if:
+      contains('
+        refs/heads/master
+        refs/heads/main
+      ', github.ref)
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
@@ -61,6 +66,9 @@ jobs:
           script: |
             sudo docker-compose stop
             sudo docker-compose rm web
+            sudo docker system prune --all
+            sudo docker volume prune
+            sudo docker image pull aleksandrkulagin/yamdb_final:latest
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -70,6 +78,9 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
             sudo docker-compose up -d
+            sudo docker-compose exec -T web python manage.py makemigrations reviews
+            sudo docker-compose exec -T web python manage.py migrate
+            sudo docker-compose exec -T web python manage.py collectstatic --no-input
   
   send_message:
     runs-on: ubuntu-latest
