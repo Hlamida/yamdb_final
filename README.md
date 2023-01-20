@@ -77,6 +77,11 @@ https://docs.docker.com/compose/install/
 По окончанию деплоя будет выслано сообщение в телеграм пользователя.
 Ход процесса можно отследить и проконтролировать на Github в разделе Actions -> Django-app workflow.
 
+6. Загрузить тестовую базу можно подключившись к терминалу сервера и выполнив команду: 
+```
+sudo docker-compose exec -T web python manage.py loaddata fixtures.json 
+```
+
 ### Технологии:
 
 Проект сделан на Django и DRF.
